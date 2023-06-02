@@ -38,10 +38,10 @@ Requests are expected to be properly formed.
 
 
 CREATE A USER 
-curl -X POST \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--d '{"username":"abc","password":"123"}' \
+curl -X POST \\
+-w "\n%{http_code}\n" \\
+-H "Content-Type: application/json" \\
+-d '{"username":"abc","password":"123"}' \\
 http://localhost:8080/api/aspire/user
 
 CREATE A LOAN
