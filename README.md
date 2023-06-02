@@ -38,67 +38,25 @@ Requests are expected to be properly formed.
 
 
 CREATE A USER 
-curl -X POST \\
--w "\n%{http_code}\n" \\
--H "Content-Type: application/json" \\
--d '{"username":"abc","password":"123"}' \\
-http://localhost:8080/api/aspire/user
+curl -X POST -w "\n%{http_code}\n" -H "Content-Type: application/json" -d '{"username":"abc","password":"123"}' http://localhost:8080/api/aspire/user
 
 CREATE A LOAN
-curl -X POST \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: abc" \
--H "X-Password: 123" \
--d '{"amount":"100.0","term":"3"}' \
-http://localhost:8080/api/aspire/loan
+curl -X POST -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: abc" -H "X-Password: 123" -d '{"amount":"100.0","term":"3"}' http://localhost:8080/api/aspire/loan
 
 RETRIEVE LOANS FOR ADMIN
-curl -X GET \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: admin" \
--H "X-Password: xyz123" \
-http://localhost:8080/api/aspire/loan
+curl -X GET -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: admin" -H "X-Password: xyz123" http://localhost:8080/api/aspire/loan
 
 RETRIEVE LOANS FOR CUSTOMER
-curl -X GET \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: abc" \
--H "X-Password: 123" \
-http://localhost:8080/api/aspire/loan
+curl -X GET -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: abc" -H "X-Password: 123" http://localhost:8080/api/aspire/loan
 
 PROCESS A LOAN FOR ADMIN
-curl -X PUT \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: admin" \
--H "X-Password: xyz123" \
--d '{"loanId":"0","loanResponse":"APPROVED"}' \
-http://localhost:8080/api/aspire/loan
+curl -X PUT -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: admin" -H "X-Password: xyz123" -d '{"loanId":"0","loanResponse":"APPROVED"}' http://localhost:8080/api/aspire/loan
 
 GET LOANS FOR CUSTOMER
-curl -X GET \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: abc" \
--H "X-Password: 123" \
-http://localhost:8080/api/aspire/loan
+curl -X GET -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: abc" -H "X-Password: 123" http://localhost:8080/api/aspire/loan
 
 PAY INSTALLMENT FOR CUSTOMER
-curl -X PUT \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: abc" \
--H "X-Password: 123" \
--d '{"installmentId":"0","loanId":"0"}' \
-http://localhost:8080/api/aspire/installment
+curl -X PUT -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: abc" -H "X-Password: 123" -d '{"installmentId":"0","loanId":"0"}' http://localhost:8080/api/aspire/installment
 
 GET INSTALLMENTS OF CUSTOMER
-curl -X GET \
--w "\n%{http_code}\n" \
--H "Content-Type: application/json" \
--H "X-Username: abc" \
--H "X-Password: 123" \
-http://localhost:8080/api/aspire/installment
+curl -X GET -w "\n%{http_code}\n" -H "Content-Type: application/json" -H "X-Username: abc" -H "X-Password: 123" http://localhost:8080/api/aspire/installment
