@@ -1,11 +1,6 @@
- __  __ _       _                      _          
- |  \/  (_)     (_)     /\             (_)         
- | \  / |_ _ __  _     /  \   ___ _ __  _ _ __ ___ 
- | |\/| | | '_ \| |   / /\ \ / __| '_ \| | '__/ _ \
- | |  | | | | | | |  / ____ \\__ \ |_) | | | |  __/
- |_|  |_|_|_| |_|_| /_/    \_\___/ .__/|_|_|  \___|
-                                 | |               
-                                 |_|          
+MINI ASPIRE
+A mini project for Aspire Backend Challenge
+
 
 Brief explaination of the project
 	This is a mini version of Aspire. It allows you to create users, request loans, approve loans if admin, view loans, 
